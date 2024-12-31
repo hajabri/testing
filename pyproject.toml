@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "ml_service"
+version = "0.0.0"
+description = "Barebones ML service"
+authors = []
+
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
+
+
+[[tool.poetry.source]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "primary"
+
+[tool.poetry.dependencies]
+python = ">=3.10, <3.12"
+uvicorn = "^0.31.0"
+fastapi = "^0.115.0"
+pydantic-settings = "^2.5.2"
+pydantic = "^2.9.2"
+spacy = "^3.8.2"
+torch = {version = "==2.0.*", source = "pytorch-cpu"}
+transformers = "^4.47.1"
+numpy = "<2.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "8.3.*"
+
+
+[tool.pytest.ini_options]
+python_functions = [
+    "test_*"
+]
+
+
+[build-system]
+requires = ["poetry>=1.8.2"]
+build-backend = "poetry.core.masonry.api"
