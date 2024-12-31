@@ -5,13 +5,25 @@
 > PROPRIETARY and CONFIDENTIAL, Coveo Solutions Inc.
 > v2.0.0 - Last Edited 2024-10-01.
 
-> Are you looking for the description of the challenge? Refer to [INSTRUCTIONS.md](INSTRUCTIONS.md).
+**A Python project that serves an NLP model to solve a multiple choice question answering (MCQA) problem as a REST API.**
+**The model fills in a missing word ([BLANK]) in a passage of text, given for possible choice.**
 
-This is a barebones ML project that serves an ML model via an HTTP API. This serves a dummy ML model, which is a basic text chunker.
+## Table of Contents
+1. Overview
 
-In the [notebooks](notebooks) directory, a notebook for training a Multiple Choice Question Answering (MCQA) can be found.
+2. Folder Structure
 
-## Quick start
+3. Setup & Installation
+
+4. Running the service locally
+
+5. Docker Build & Run
+
+6. Testing the MCQA Endpoint
+
+7. Known Limitations/Future Work
+
+## Overview
 
 Documentation on getting started.
 
