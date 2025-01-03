@@ -40,8 +40,8 @@ Below is a simple **data flow diagram** illustrating how a user sends text with 
 ```mermaid
 flowchart LR
     U[User] -->|POST /mcqa| A[FastAPI / MCQA Endpoint]
-    A -->|Load config & Model Path<br>(config.yaml)| C[MCQA Model Code]
-    C -->|Inference using HF Model| D[Model Artifacts<br>(artifacts/models)]
+    A -->|Load config & Model Path (config.yaml)| C[MCQA Model Code]
+    C -->|Inference using HF Model| D[Model Artifacts (artifacts/models)]
     C -->|Return best choice & confidence| A
     A -->|JSON response| U
 ```
