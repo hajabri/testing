@@ -1,0 +1,9 @@
+# config.yaml
+model:
+  path: "artifacts/models"      # directory where model.safetensors, config.json, etc. are stored
+  gpu_enabled: false            # set to true if you want to enable GPU usage
+
+service:
+  host: "0.0.0.0"
+  port: 8080
+  development_mode: false

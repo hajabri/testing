@@ -37,21 +37,22 @@ This project:
 
 Below is a simple **data flow diagram** illustrating how a user sends text with `[BLANK]` to your FastAPI service, which loads the HuggingFace MCQA model to compute the best choice. The response is then returned to the user with a chosen label and confidence score.
 
-```mermaid
+```
+mermaid
 flowchart LR
     U[User] -->|POST /mcqa| A[FastAPI / MCQA Endpoint]
     A -->|Load config & Model Path<br>(config.yaml)| C[MCQA Model Code]
     C -->|Inference using HF Model| D[Model Artifacts<br>(artifacts/models)]
     C -->|Return best choice & confidence| A
     A -->|JSON response| U
-
+```
 > **Note**: We do **not** train the model here. We only serve it for inference.
 
----
+
 
 ## Folder Structure
 
-```plaintext
+```
 .
 ├── artifacts/
 │   ├── datasets/       # (train.csv, test.csv, if needed for local checks)
@@ -146,8 +147,11 @@ service:
 {
   "text": "It was a [BLANK] day.",
   "choice1": "bright",
+
   "choice2": "green",
+  
   "choice3": "dark",
+  
   "choice4": "heavy"
 }
 **Example cURL**:
@@ -195,4 +199,4 @@ make docker-run
 4. **CI/CD**: A pipeline to automatically build/test Docker on each commit would reduce deployment friction.
 5. **Quantization / TorchScript**: For faster CPU inference, consider model optimizations.
 
-**Happy MCQA-ing!**s
+**Happy MCQA-ing!**
