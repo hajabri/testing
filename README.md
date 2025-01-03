@@ -37,8 +37,7 @@ This project:
 
 Below is a simple **data flow diagram** illustrating how a user sends text with `[BLANK]` to your FastAPI service, which loads the HuggingFace MCQA model to compute the best choice. The response is then returned to the user with a chosen label and confidence score.
 
-```
-mermaid
+```mermaid
 flowchart LR
     U[User] -->|POST /mcqa| A[FastAPI / MCQA Endpoint]
     A -->|Load config & Model Path<br>(config.yaml)| C[MCQA Model Code]
